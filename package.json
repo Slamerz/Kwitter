@@ -31,8 +31,10 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "author": {
-    "name": "Jacob Walker",
-    "email": "jacobdawalker@gmail.com"
-  }
+  "contributors": [
+    {
+      "name": "jacob Walker",
+      "email": "jacobdawalker@gmail.com"
+    }
+  ]
 }
