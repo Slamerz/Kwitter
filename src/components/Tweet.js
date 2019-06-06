@@ -4,7 +4,7 @@ class Tweet extends Component {
   render() {
     return (
       <input className="Tweet" type="text">
-        //Tweet text/value goes here
+        {/* Tweet text/value goes here */}
       </input>
     );
   }
