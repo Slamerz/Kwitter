@@ -1,13 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { LoginForm, UserProfile } from ".";
-import LikeButton from './LikeButton';
+import NavBarContainer from "./NavBarContainer"
 
 const App = () => (
-  <div>
-      <LikeButton>More than you'd think it would have</LikeButton>
-  </div>
-
+ <div>
+   <NavBarContainer></NavBarContainer>
+ </div>
 );
 
 export default App;
