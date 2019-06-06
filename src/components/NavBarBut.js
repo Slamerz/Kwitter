@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Nav, NavItem, NavLink } from "shards-react";
 
 class NavBarBut extends Component {
   render() {
     return (
-      <NavLink exact to="/" activeClassName="selected">
-        //Placeholder
-      </NavLink>
+     <Nav>
+        <NavItem>
+            <NavLink activehref="/">
+            //Something
+            </NavLink>
+        </NavItem>
+     </Nav>
     );
   }
 }
