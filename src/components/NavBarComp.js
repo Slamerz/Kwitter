@@ -8,7 +8,7 @@ render() {
         <Navbar type="dark" theme="primary">
             <NavBarBut>            </NavBarBut>
             <NavBarBut>             </NavBarBut>
-            
+            {/* search bar */}
         </Navbar>
     )
 }
