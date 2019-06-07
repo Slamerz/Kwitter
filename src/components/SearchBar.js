@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { FormInput } from "shards-react";
+import { FormInput, InputGroup } from "shards-react";
 
 class SearchBar extends Component {
   render() {
     return (
-      <FormInput placeholder="Search"/>
-      
+        <InputGroup size="sm" seamless>
+        <FormInput className="border-0" placeholder="Search..." />
+      </InputGroup>
     );
   }
 }

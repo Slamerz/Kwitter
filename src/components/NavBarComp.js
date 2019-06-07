@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 class NavBarComp extends Component {
 render() {
     return(
-        <Navbar type="dark" theme="primary">
+        <Navbar className="navbar" theme="primary">
             <NavBarBut>            </NavBarBut>
             <NavBarBut>             </NavBarBut>
             <SearchBar></SearchBar>
