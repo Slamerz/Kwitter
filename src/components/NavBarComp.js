@@ -7,8 +7,8 @@ class NavBarComp extends Component {
 render() {
     return(
         <Navbar className="navbar" theme="primary">
-            <NavBarBut>            </NavBarBut>
-            <NavBarBut>             </NavBarBut>
+            <NavBarBut>      Home       </NavBarBut>
+            <NavBarBut>      Notification      </NavBarBut>
             <SearchBar></SearchBar>
         </Navbar>
     )

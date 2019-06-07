@@ -4,8 +4,8 @@ import { FormInput, InputGroup } from "shards-react";
 class SearchBar extends Component {
   render() {
     return (
-        <InputGroup size="sm" seamless>
-        <FormInput className="border-0" placeholder="Search..." />
+        <InputGroup className="searchbar" size="sm" seamless>
+        <FormInput inline="true" className="border-0" placeholder="Search..." />
       </InputGroup>
     );
   }

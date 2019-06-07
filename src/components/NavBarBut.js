@@ -5,9 +5,9 @@ class NavBarBut extends Component {
   render() {
     return (
       <Nav>
-        <NavItem>
+        <NavItem className="button">
           <NavLink activehref="/">
-            <Button className="button" theme="success">{this.props.children}</Button>
+            <Button theme="success">{this.props.children}</Button>
           </NavLink>
         </NavItem>
       </Nav>

@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.navbar{
+  display: flex;
+  justify-content: flex-start
+}
+
+.searchbar {
+  width: 25%;
+}
+
+.button{
+  margin: 0%;
+}
