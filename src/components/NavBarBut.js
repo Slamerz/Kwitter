@@ -4,13 +4,11 @@ import { Nav, NavItem, NavLink } from "shards-react";
 class NavBarBut extends Component {
   render() {
     return (
-     <Nav>
+      <Nav>
         <NavItem>
-            <NavLink activehref="/">
-            //Something
-            </NavLink>
+          <NavLink activehref="/">//Something</NavLink>
         </NavItem>
-     </Nav>
+      </Nav>
     );
   }
 }
