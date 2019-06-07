@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { LoginForm, UserProfile } from ".";
-import NavBarComp from "./NavBarComp";
-
 
 const App = () => (
-  <NavBarComp></NavBarComp>
+  <Switch>
+    <Route exact path="/" render={() => <LoginForm />} />
+    <Route exact path="/profile" render={() => <UserProfile />} />
+  </Switch>
 );
 
 export default App;
