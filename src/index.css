@@ -12,3 +12,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.displayName {
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.username {
+  color: #aaaaaa;
+}
+
+.date {
+  color: #aaaaaa;
+}
+
+.tweet {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+.tweet p {
+  font-size: 16pt;
+  font-weight: 400;
+}
