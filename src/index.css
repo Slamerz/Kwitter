@@ -44,3 +44,16 @@ code {
   font-size: 16pt;
   font-weight: 400;
 }
+
+.navbar{
+  display: flex;
+  justify-content: flex-start
+}
+
+.searchbar {
+  width: 25%;
+}
+
+.button{
+  margin: 0%;
+}
