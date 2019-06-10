@@ -57,3 +57,11 @@ code {
 .button{
   margin: 0%;
 }
+
+.userlist{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  border: solid 1px #00afd2;
+  padding: 8px;
+}
