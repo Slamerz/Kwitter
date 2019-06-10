@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { LoginForm, UserProfile, Homepage } from ".";
+import { LoginForm, UserProfile,  } from ".";
 
 
 const App = () => (
