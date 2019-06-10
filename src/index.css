@@ -20,3 +20,56 @@ code {
   border:  solid 1px rgb(5, 5, 5);
 }
 
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.displayName {
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.username {
+  color: #aaaaaa;
+}
+
+.date {
+  color: #aaaaaa;
+}
+
+.tweet {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+.tweet p {
+  font-size: 16pt;
+  font-weight: 400;
+}
+
+.navbar{
+  display: flex;
+  justify-content: flex-start
+}
+
+.searchbar {
+  width: 25%;
+}
+
+.button{
+  margin: 0%;
+}
+
+.userlist{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  border: solid 1px #00afd2;
+  padding: 8px;
+}
