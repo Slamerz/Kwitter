@@ -3,7 +3,7 @@ import NavBarComp from "./NavBarComp";
 import ProfileCard from "./ProfileCard";
 import Postbar from "./Postbar";
 import UserList from "./UserList";
-import Tweet from "./Tweet";
+import Feed from "./Feed";
 
 import { Container, Row, Col } from "shards-react";
 
@@ -22,10 +22,7 @@ export default class Homepage extends Component {
                     <Postbar />
                 </Row>
                 <Row>
-                    <Tweet  
-                        author={{ displayName: "display Name", username: "username" }}
-                        message={{createdAt:"createdAt", text:"text" ,likes:[5,0,0,0]}}
-                    />
+                    {/* <Feed></Feed> */}
                 </Row>
             </Col>
             <Col>
