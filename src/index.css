@@ -13,6 +13,14 @@ code {
     monospace;
 }
 
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius:500px;
+  border:  solid 1px rgb(5, 5, 5);
+}
+
+
 .avatar {
   width: 34px;
   height: 34px;
