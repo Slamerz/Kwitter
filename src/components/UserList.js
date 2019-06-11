@@ -3,8 +3,7 @@ import Username from "./Username";
 
 class UserList extends Component {
   render() {
-    let usersArray= []
-    const users = usersArray.map((user, key) => (
+    const users = this.props.users.map((user, key) => (
       <Username user={user} key={key} />
     ));
     return <div className="userlist">{users}</div>;
