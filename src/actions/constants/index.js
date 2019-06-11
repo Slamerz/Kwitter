@@ -1,5 +1,5 @@
-// export const domain = "https://kwitter-api.herokuapp.com";
-export const domain = "http://localhost:3000";
+export const domain = "https://kwitter-api.herokuapp.com";
+//export const domain = "http://localhost:3000";
 
 export const jsonHeaders = {
   "Content-Type": "application/json",
@@ -14,3 +14,11 @@ export const handleJsonResponse = res => {
     throw result;
   });
 };
+
+export const FETCH_TWEETS_BEGIN = "FETCH_TWEETS_BEGIN";
+export const FETCH_TWEETS_SUCCESS = "FETCH_TWEETS_SUCCESS";
+export const FETCH_TWEETS_FAILURE = "FETCH_TWEETS_FAILURE";
+
+export const FETCH_USERS_BEGIN = "FETCH_USERS_BEGIN";
+export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS";
+export const FETCH_USERS_FAILURE = "FETCH_USERS_FAILURE";
