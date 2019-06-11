@@ -55,7 +55,7 @@ code {
 
 .navbar{
   display: flex;
-  justify-content: flex-start
+  justify-content: flex-start;
 }
 
 .searchbar {
@@ -64,6 +64,10 @@ code {
 
 .button{
   margin: 0%;
+}
+
+.profilepage{
+  display: flex;
 }
 
 .userlist{
