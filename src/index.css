@@ -55,7 +55,7 @@ code {
 
 .navbar{
   display: flex;
-  justify-content: flex-start
+  justify-content: flex-start;
 }
 
 .searchbar {
@@ -66,10 +66,55 @@ code {
   margin: 0%;
 }
 
+.profilepage{
+  display: flex;
+}
+
 .userlist{
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 8px;
   border: solid 1px #00afd2;
   padding: 8px;
+}
+
+.loginformholder{
+  width:500px;
+  height:500px;
+  text-align:center;
+  margin:auto;
+  margin-top:100px;
+  border:1px solid grey;
+  border-radius:10px;
+  background-color:teal;
+}
+form{
+  margin-top:50px;
+}
+
+.loginheader{
+  text-align:center;
+  color: lightgray;
+  margin: 40px;
+}
+.inputlogin{
+  width:300px;
+  margin-top:15px;
+  color:lightgray;
+  background-color:#e6f2ff;
+  height:40px;
+  border-radius: 5px;
+  text-align:center;
+
+} 
+.loginbutton{
+  width:300px;
+  margin-top:15px;
+  margin-left:90px;
+  
+}
+
+.userlabel{
+  color: lightgray;
+  font-weight: bold;
 }
