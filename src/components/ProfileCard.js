@@ -12,10 +12,10 @@ import {
 export default function ProfileCard() {
   return (
     <Card style={{ maxWidth: "300px" }}>
-      <CardHeader>Username</CardHeader>
+      <CardHeader>{this.props.username}</CardHeader>
       <CardImg src="https://place-hold.it/300x200" />
       <CardBody>
-        <CardTitle>DisplayName</CardTitle>
+        <CardTitle>{this.props.name}</CardTitle>
         <p>Bio</p>
         <Button>Tweets &rarr;</Button>
       </CardBody>
