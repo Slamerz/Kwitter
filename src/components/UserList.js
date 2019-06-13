@@ -7,8 +7,8 @@ class UserList extends Component {
     const users = this.props.users.map((user, key) => {
       if(key <=10)
         return <Link to={"/profile/" + user.id}><Username user={user} key={key} /></Link>
-      });
-    return <div className="userlist"><p>People you may know.</p>{users}</div>;
+    });
+    return <div className="userlist"><h4>People you may know.</h4>{users}</div>;
   }
 }
 export default UserList;

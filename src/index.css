@@ -29,15 +29,17 @@ code {
 
 .displayName {
   font-weight: bold;
-  padding: 0.5em;
+  padding: 0.5em 0 0.5em 0.5em;
 }
 
 .username {
   color: #aaaaaa;
+
 }
 
 .date {
   color: #aaaaaa;
+  padding: 1em;
 }
 
 .tweet {
@@ -45,7 +47,7 @@ code {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 1em;
-  margin: 0.5em;
+  margin: 0.5em 0;
 }
 
 .tweet p {
@@ -63,7 +65,7 @@ code {
 }
 
 .button{
-  margin: 0%;
+  margin: 0;
 }
 
 .profilepage{
@@ -76,14 +78,20 @@ code {
   grid-gap: 8px;
   border: solid 1px #00afd2;
   padding: 8px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.usernamebutton{
+  width: 100%;
 }
 
 .loginformholder{
   width:500px;
   height:500px;
   text-align:center;
-  margin:auto;
-  margin-top:100px;
+  margin: 100px auto auto;
   border:1px solid grey;
   border-radius:10px;
   background-color:teal;
@@ -117,4 +125,11 @@ form{
 .userlabel{
   color: lightgray;
   font-weight: bold;
+}
+.postbar{
+  width: 100%
+}
+
+.postbar input{
+  width: inherit;
 }

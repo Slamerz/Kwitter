@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import { LoginForm, UserProfile,Homepage  } from ".";
 import ProfilePage from "./ProfilePage";
 
-
 const App = () => (
   <Switch>
     <Route exact path="/" component={LoginForm} />
