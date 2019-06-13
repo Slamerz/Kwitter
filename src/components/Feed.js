@@ -11,7 +11,7 @@ class Feed extends Component {
         if(tweet.userId === +this.props.filterId)
           return currentTweet;
       });
-      return <div>{this.tweets}</div>;
+      return <div style={{width: "100%"}}>{this.tweets}</div>;
   }
 }
 
