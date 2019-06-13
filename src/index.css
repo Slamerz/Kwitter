@@ -29,15 +29,17 @@ code {
 
 .displayName {
   font-weight: bold;
-  padding: 0.5em;
+  padding: 0.5em 0 0.5em 0.5em;
 }
 
 .username {
   color: #aaaaaa;
+
 }
 
 .date {
   color: #aaaaaa;
+  padding: 1em;
 }
 
 .tweet {
