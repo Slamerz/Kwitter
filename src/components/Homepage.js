@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import NavBarComp from "./NavBarComp";
 import ProfileCard from "./ProfileCard";
 import Postbar from "./Postbar";
-import UserList from "./UserList";
-import Feed from "./Feed";
-
 import { Container, Row, Col } from "shards-react";
+import VisibleFeed from "../containers/VisibleFeed";
+import Users from "../containers/Users";
 
 export default class Homepage extends Component {
   render() {
@@ -22,11 +21,11 @@ export default class Homepage extends Component {
                     <Postbar />
                 </Row>
                 <Row>
-                    {/* <Feed></Feed> */}
+                    {<VisibleFeed />}
                 </Row>
             </Col>
             <Col>
-              <UserList />
+              <Users />
             </Col>
           </Row>
           <Row>
