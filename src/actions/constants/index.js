@@ -1,5 +1,5 @@
 export const domain = "https://kwitter-api.herokuapp.com";
-//export const domain = "http://localhost:3000";
+export const placeholderAvatar = "https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png";
 
 export const jsonHeaders = {
   "Content-Type": "application/json",

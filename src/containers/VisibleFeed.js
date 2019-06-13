@@ -25,7 +25,7 @@ class VisibleFeed extends React.Component {
       return <div>Loading...</div>;
     }
 
-    return <Feed tweets={tweets} users={users} />;
+    return <Feed tweets={tweets} users={users} filterId={this.props.id} />;
   }
 }
 
