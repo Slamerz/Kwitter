@@ -78,14 +78,20 @@ code {
   grid-gap: 8px;
   border: solid 1px #00afd2;
   padding: 8px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.usernamebutton{
+  width: 100%;
 }
 
 .loginformholder{
   width:500px;
   height:500px;
   text-align:center;
-  margin:auto;
-  margin-top:100px;
+  margin: 100px auto auto;
   border:1px solid grey;
   border-radius:10px;
   background-color:teal;
