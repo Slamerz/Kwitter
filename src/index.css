@@ -45,7 +45,7 @@ code {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 1em;
-  margin: 0.5em;
+  margin: 0.5em 0;
 }
 
 .tweet p {
@@ -63,7 +63,7 @@ code {
 }
 
 .button{
-  margin: 0%;
+  margin: 0;
 }
 
 .profilepage{
@@ -117,4 +117,11 @@ form{
 .userlabel{
   color: lightgray;
   font-weight: bold;
+}
+.postbar{
+  width: 100%
+}
+
+.postbar input{
+  width: inherit;
 }
