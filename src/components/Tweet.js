@@ -3,6 +3,7 @@ import LikeButton from "./LikeButton";
 //TODO replace img tag with profile picture object once it's complete.
 class Tweet extends Component {
   render() {
+    
     return (
       <div key={this.props.tweet.id} className="tweet">
         <img
