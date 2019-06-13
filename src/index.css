@@ -13,6 +13,14 @@ code {
     monospace;
 }
 
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius:500px;
+  border:  solid 1px rgb(5, 5, 5);
+}
+
+
 .avatar {
   width: 34px;
   height: 34px;
@@ -21,15 +29,17 @@ code {
 
 .displayName {
   font-weight: bold;
-  padding: 0.5em;
+  padding: 0.5em 0 0.5em 0.5em;
 }
 
 .username {
   color: #aaaaaa;
+
 }
 
 .date {
   color: #aaaaaa;
+  padding: 1em;
 }
 
 .tweet {
@@ -37,7 +47,7 @@ code {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 1em;
-  margin: 0.5em;
+  margin: 0.5em 0;
 }
 
 .tweet p {
@@ -47,7 +57,7 @@ code {
 
 .navbar{
   display: flex;
-  justify-content: flex-start
+  justify-content: flex-start;
 }
 
 .searchbar {
@@ -55,7 +65,11 @@ code {
 }
 
 .button{
-  margin: 0%;
+  margin: 0;
+}
+
+.profilepage{
+  display: flex;
 }
 
 .userlist{
@@ -64,4 +78,52 @@ code {
   grid-gap: 8px;
   border: solid 1px #00afd2;
   padding: 8px;
+}
+
+.loginformholder{
+  width:500px;
+  height:500px;
+  text-align:center;
+  margin:auto;
+  margin-top:100px;
+  border:1px solid grey;
+  border-radius:10px;
+  background-color:teal;
+}
+form{
+  margin-top:50px;
+}
+
+.loginheader{
+  text-align:center;
+  color: lightgray;
+  margin: 40px;
+}
+.inputlogin{
+  width:300px;
+  margin-top:15px;
+  color:lightgray;
+  background-color:#e6f2ff;
+  height:40px;
+  border-radius: 5px;
+  text-align:center;
+
+} 
+.loginbutton{
+  width:300px;
+  margin-top:15px;
+  margin-left:90px;
+  
+}
+
+.userlabel{
+  color: lightgray;
+  font-weight: bold;
+}
+.postbar{
+  width: 100%
+}
+
+.postbar input{
+  width: inherit;
 }
