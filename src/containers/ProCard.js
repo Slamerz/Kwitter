@@ -21,8 +21,9 @@ class ProCard extends React.Component {
     }
     if (usersLoading || loginLoading || tweetsLoading) {
       return <div>Loading...</div>;
-    } else {
-      const id = this.props.id || login.id;
+    } 
+    if(this.props) {
+      const id = this.props.id || login.id || 5;
       return (
         <ProfileCard
           user={users.find(user => +user.id === +id)}
