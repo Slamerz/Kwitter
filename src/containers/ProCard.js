@@ -10,14 +10,26 @@ class ProCard extends React.Component {
       tweets,
       users,
       usersLoading,
-      usersError
+      usersError,
+      login,
+      loginLoading,
+      loginError
     } = this.props;
-    return (
-      <ProfileCard
-        user={users.find(user => +user.id === 5)}
-        tweets={tweets.filter(tweet => +tweet.userId === 5)}
-      />
-    );
+
+    if (usersError || loginError || tweetsError) {
+      return <div>Error! {users.message}</div>;
+    }
+    if (usersLoading || loginLoading || tweetsLoading) {
+      return <div>Loading...</div>;
+    } else {
+      const id = this.props.id || login.id;
+      return (
+        <ProfileCard
+          user={users.find(user => +user.id === +id)}
+          tweets={tweets.filter(tweet => +tweet.userId === +id)}
+        />
+      );
+    }
   }
 }
 
