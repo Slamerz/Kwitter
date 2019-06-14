@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBarComp from "./NavBarComp";
-import Feed from "./Feed";
-import ProfileCard from "./ProfileCard";
+import ProCard from "../containers/ProCard";
+import VisibleFeed from "../containers/VisibleFeed";
 import PostBar from "./Postbar";
 
 class ProfilePage extends Component {
@@ -10,9 +10,9 @@ class ProfilePage extends Component {
       <div>
         <NavBarComp classname="navbar" />
         <div className="profilepage">
-          <ProfileCard className="profile" />
+          <ProCard id={this.props.match.params.id} className="profile" />
           <PostBar className="postbar" />
-          <Feed tweets={fillerTweets} users={fillerUsers} />
+          <VisibleFeed />
         </div>
       </div>
     );
