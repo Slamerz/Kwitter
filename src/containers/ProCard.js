@@ -21,8 +21,8 @@ class ProCard extends React.Component {
     }
     if (usersLoading || loginLoading || tweetsLoading) {
       return <div>Loading...</div>;
-    } 
-    if(this.props) {
+    }
+    if (this.props) {
       const id = this.props.id || login.id;
       return (
         <ProfileCard
@@ -40,7 +40,10 @@ const mapStateToProps = state => ({
   usersError: state.users.error,
   tweets: state.messages.tweets,
   tweetsLoading: state.messages.loading,
-  tweetsError: state.messages.error
+  tweetsError: state.messages.error,
+  login: state.auth.login,
+  loginLoading: state.auth.loginLoading,
+  loginError: state.auth.loginError
 });
 
 export default connect(mapStateToProps)(ProCard);

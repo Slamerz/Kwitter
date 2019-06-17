@@ -1,4 +1,8 @@
-import {FETCH_TWEETS_BEGIN, FETCH_TWEETS_FAILURE, FETCH_TWEETS_SUCCESS} from "../actions/constants";
+import {
+  FETCH_TWEETS_BEGIN,
+  FETCH_TWEETS_FAILURE,
+  FETCH_TWEETS_SUCCESS
+} from "../actions/constants";
 
 const initialState = {
   tweets: [],
@@ -8,7 +12,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-
     case FETCH_TWEETS_BEGIN:
       return {
         ...state,
