@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ProfileCard from "../components/ProfileCard";
+import { Redirect } from "react-router"
 
 class ProCard extends React.Component {
   render() {
@@ -21,6 +22,9 @@ class ProCard extends React.Component {
     }
     if (usersLoading || loginLoading || tweetsLoading) {
       return <div>Loading...</div>;
+    }
+    if (!login){
+     return <Redirect to="/"/>
     }
     if (this.props) {
       const id = this.props.id || login.id;
