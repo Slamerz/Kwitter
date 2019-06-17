@@ -58,6 +58,7 @@ code {
 .navbar{
   display: flex;
   justify-content: flex-start;
+  /* overflow:hidden; */
 }
 
 .searchbar {
