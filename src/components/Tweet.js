@@ -18,6 +18,8 @@ class Tweet extends Component {
           <LikeButton>{this.props.tweet.likes.length}</LikeButton>
         </div>
       );
+    } else {
+      return <div />;
     }
   }
 }
