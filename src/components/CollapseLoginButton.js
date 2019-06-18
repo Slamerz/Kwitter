@@ -17,7 +17,7 @@ class CollapseLoginButton extends Component {
   render() {
     return (
       <React.Fragment>
-        <Button onClick={this.toggle}>Toggle</Button>
+        <Button onClick={this.toggle}>Register</Button>
         <Collapse open={this.state.collapse}>
           <div className="p-3 mt-3 border rounded">
             <Form onSubmit={this.handleOnSubmit}>
