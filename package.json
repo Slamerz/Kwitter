@@ -1,6 +1,6 @@
 {
-  "name": "kwitter",
-  "version": "0.1.1",
+  "name": "Quitter",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "connected-react-router": "^6.3.1",
@@ -34,7 +34,7 @@
   ],
   "contributors": [
     {
-      "name": "jacob Walker",
+      "name": "Jacob Walker",
       "email": "jacobdawalker@gmail.com"
     },
     {
@@ -46,7 +46,7 @@
       "email": "mharsley45@gmail.com"
     },
     {
-      "name": "chris joy",
+      "name": "Chris Joy",
       "email": "cmjoy136@gmail.com"
     }
   ]
