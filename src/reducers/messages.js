@@ -1,4 +1,4 @@
-import {FETCH_TWEETS_BEGIN, FETCH_TWEETS_FAILURE, FETCH_TWEETS_SUCCESS, CREATE_TWEET, DELETE_TWEET} from "../actions";
+import {FETCH_TWEETS_BEGIN, FETCH_TWEETS_FAILURE, FETCH_TWEETS_SUCCESS, CREATE_TWEET, DELETE_TWEET} from "../actions/constants";
 
 const initialState = {
   tweets: [],
