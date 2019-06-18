@@ -2,8 +2,11 @@ import {
   FETCH_TWEETS_FAILURE,
   FETCH_TWEETS_SUCCESS,
   FETCH_TWEETS_BEGIN,
-  domain
+  domain,
+  handleJsonResponse,
+  jsonHeaders
 } from "./constants";
+import {store} from "../index"
 
 export const fetchTweetsBegin = () => ({
   type: FETCH_TWEETS_BEGIN
@@ -37,4 +40,33 @@ function handleErrors(response) {
     throw Error(response.statusText);
   }
   return response;
+}
+
+
+export const CREATE_TWEET = 'CREATE_TWEET'
+export const DELETE_TWEET = 'DELETE_TWEET'
+
+export const createTweet = text => dispatch => {
+  const token = store.getState().auth.login.token
+  return fetch(domain + "/messages", {
+    method: "POST",
+    headers: {
+      ...jsonHeaders,
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify({text})
+  })
+    .then(handleJsonResponse)
+    .then(res => {
+      console.log(res)
+      return dispatch({
+        type: CREATE_TWEET,
+        payload: res.messsage
+      })
+    })
+  // return { type: CREATE_TWEET, text}
+}
+
+export const deleteTweet = id => dispatch => {
+  // return {type: DELETE_TWEET, id}
 }
