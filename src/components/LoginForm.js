@@ -19,27 +19,38 @@ class LoginForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
-        <h1>Login</h1>
-        <form onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={isLoading}>
-            Login
-          </button>
-        </form>
+        <div class="loginformholder">
+          <h1 class="loginheader">LOGIN</h1>
+          <form onSubmit={this.handleLogin}>
+            <label class="userlabel" htmlFor="username">
+              Username: &nbsp;
+            </label>
+            <input
+              class="inputlogin"
+              type="text"
+              name="username"
+              placeholder="Enter your username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+            <br />
+            <label class="userlabel" htmlFor="password">
+              Password: &nbsp;
+            </label>
+            <input
+              class="inputlogin"
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+            <br />
+            <button class="loginbutton" type="submit" disabled={isLoading}>
+              Login
+            </button>
+          </form>
+        </div>
         {isLoading && <Spinner name="circle" color="blue" />}
         {err && <p style={{ color: "red" }}>{err}</p>}
       </React.Fragment>

@@ -1,6 +1,6 @@
 {
-  "name": "kwitter",
-  "version": "0.1.0",
+  "name": "Quitter",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "connected-react-router": "^6.3.1",
@@ -14,7 +14,8 @@
     "react-spinkit": "^3.0.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "shards-react": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,5 +31,23 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
+  ],
+  "contributors": [
+    {
+      "name": "Jacob Walker",
+      "email": "jacobdawalker@gmail.com"
+    },
+    {
+      "name": "JaNessa Davis",
+      "email": "janessadavis95@gmail.com"
+    },
+    {
+      "name": "Mark Harsley",
+      "email": "mharsley45@gmail.com"
+    },
+    {
+      "name": "Chris Joy",
+      "email": "cmjoy136@gmail.com"
+    }
   ]
 }
