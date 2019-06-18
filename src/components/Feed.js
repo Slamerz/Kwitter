@@ -3,11 +3,13 @@ import Tweet from "./Tweet";
 
 class Feed extends Component {
   render() {
-    this.tweets = this.props.tweets.map(tweet => {
-      const author = this.props.users.filter(
+    const {tweets, users, likes, login, postLike} = this.props;
+    this.tweets = tweets.map(tweet => {
+      const author = users.filter(
         user => user.id === tweet.userId
       )[0];
-      return <Tweet key={tweet.id} tweet={tweet} author={author} />;
+      this.likes = likes.filter(like => like.messageId === tweet.id);
+      return <Tweet key={tweet.id} tweet={tweet} author={author} likes={this.likes} login={login} postLike={postLike}/>;
     });
 
     return <div>{this.tweets}</div>;
