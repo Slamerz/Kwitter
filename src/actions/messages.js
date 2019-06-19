@@ -7,7 +7,7 @@ import {
   domain,
   handleJsonResponse,
   jsonHeaders
-} from "../actions/constants";
+} from "./constants";
 import { store } from "../index";
 
 export const fetchTweetsBegin = () => ({
@@ -64,23 +64,3 @@ export const createTweet = text => dispatch => {
     });
 };
 
-// export const deleteTweet = id => dispatch => {
-//   const token = store.getState().auth.login.token
-//   return fetch(domain + "/messages", {
-//     method: "DELETE",
-//     headers: {
-//       ...jsonHeaders,
-//       Authorization: `Bearer ${token}`
-//     },
-//     body: JSON.stringify({text})
-//   })
-//     .then(handleJsonResponse)
-//     .then(res => {
-//       console.log(res)
-//       return dispatch({
-//         type: DELETE_TWEET,
-//         payload: res.messsage
-//       })
-//     })
-//   // return {type: DELETE_TWEET, id}
-// }
