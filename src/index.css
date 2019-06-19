@@ -46,11 +46,13 @@ code {
   border-radius: 5px;
   padding: 1em;
   margin: 0.5em 0;
+  max-width: 500px;
 }
 
 .tweet p {
   font-size: 16pt;
   font-weight: 400;
+  word-wrap: break-word;
 }
 
 .navbar {
