@@ -3,7 +3,7 @@ import LikeButton from "./LikeButton";
 import { domain } from "../actions/constants";
 class Tweet extends Component {
   render() {
-      const {tweet, author, likes, login, postLike} = this.props;
+    const { tweet, author, likes, login, likeActions } = this.props;
     if (tweet && author) {
       const avatarUrl = author.pictureLocation
         ? domain + author.pictureLocation
@@ -16,7 +16,12 @@ class Tweet extends Component {
           <span className="username">@{author.username}</span>
           <span className="date">{date}</span>
           <p>{tweet.text}</p>
-          <LikeButton messageId={tweet.id} likes={likes} login={login} postLike={postLike}/>
+          <LikeButton
+            messageId={tweet.id}
+            likes={likes}
+            login={login}
+            likeActions={likeActions}
+          />
         </div>
       );
     } else {
