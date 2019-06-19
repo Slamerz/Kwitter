@@ -7,6 +7,7 @@ import {
   UPDATE_PROFILE_SUCCESS,
   UPDATE_PROFILE_BEGIN
 } from "./constants";
+import { handleJsonResponse } from "./constants"
 
 export const fetchUsersBegin = () => ({
   type: FETCH_USERS_BEGIN
@@ -24,9 +25,9 @@ export function fetchUsers() {
   return dispatch => {
     dispatch(fetchUsersBegin());
     return fetch(domain + "/users")
-      .then(handleErrors)
-      .then(res => res.json())
+      .then(handleJsonResponse)
       .then(json => {
+        console.log(json)
         // dispatch(fetchUsersSuccess(json.users));
         return json.users;
       })
@@ -64,7 +65,7 @@ export function updateprofile(displayName) {
         displayName: displayName
       }),
       headers: {
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer" + token,
         "Content-Type": "application/json"
       }
     })
