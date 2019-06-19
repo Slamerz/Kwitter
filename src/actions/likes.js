@@ -5,7 +5,10 @@ import {
   POST_LIKE_BEGIN,
   POST_LIKE_SUCCESS,
   domain,
-  POST_LIKE_FAILURE
+  POST_LIKE_FAILURE,
+  DELETE_LIKE_BEGIN,
+  DELETE_LIKE_SUCCESS,
+  DELETE_LIKE_FAILURE
 } from "./constants";
 
 export const fetchLikesBegin = () => ({
@@ -34,8 +37,40 @@ export const postLikeFailure = error => ({
   payload: { error }
 });
 
+export const deleteLikeBegin = () => ({
+  type: DELETE_LIKE_BEGIN
+});
+
+export const deleteLikeSuccess = likeId => ({
+  type: DELETE_LIKE_SUCCESS,
+  payload: { likeId }
+});
+
+export const deleteLikeFailure = error => ({
+  type: DELETE_LIKE_FAILURE,
+  payload: { error }
+});
+
+export function deleteLike(likeId, userToken) {
+  return dispatch => {
+    dispatch(deleteLikeBegin());
+    fetch(`${domain}/likes/${likeId}`, {
+      method: "delete",
+      headers: {
+        Authorization: `Bearer ${userToken}`
+      }
+    })
+      .then(response => response.json())
+      .then(json => {
+        dispatch(deleteLikeSuccess(likeId));
+        return json;
+      })
+      .catch(error => deleteLikeFailure(error));
+  };
+}
+
 export function postLike(messageId, userToken) {
-  const d =JSON.stringify({messageId: +messageId});
+  const d = JSON.stringify({ messageId: +messageId });
   console.log(messageId, userToken);
   return dispatch => {
     dispatch(postLikeBegin());
@@ -49,14 +84,10 @@ export function postLike(messageId, userToken) {
     })
       .then(response => response.json())
       .then(json => {
-
-        console.log(json.like);
         dispatch(postLikeSuccess(json.like));
         return json.like;
       })
-      .catch(error => {
-        console.log(error);
-        return dispatch(postLikeFailure(error))});
+      .catch(error => dispatch(postLikeFailure(error)));
   };
 }
 

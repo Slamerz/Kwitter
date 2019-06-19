@@ -1,5 +1,4 @@
 export const domain = "https://kwitter-api.herokuapp.com";
-//export const domain = "http://localhost:3000";
 
 export const jsonHeaders = {
   "Content-Type": "application/json",
@@ -30,3 +29,7 @@ export const FETCH_LIKES_FAILURE = "FETCH_LIKES_FAILURE";
 export const POST_LIKE_BEGIN = "POST_LIKE_BEGIN";
 export const POST_LIKE_SUCCESS = "POST_LIKE_SUCCESS";
 export const POST_LIKE_FAILURE = "POST_LIKE_FAILURE";
+
+export const DELETE_LIKE_BEGIN = "DELETE_LIKE_BEGIN";
+export const DELETE_LIKE_SUCCESS = "DELETE_LIKE_SUCCESS";
+export const DELETE_LIKE_FAILURE = "DELETE_LIKE_FAILURE";

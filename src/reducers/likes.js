@@ -4,7 +4,10 @@ import {
   FETCH_LIKES_SUCCESS,
   POST_LIKE_BEGIN,
   POST_LIKE_SUCCESS,
-  POST_LIKE_FAILURE
+  POST_LIKE_FAILURE,
+  DELETE_LIKE_BEGIN,
+  DELETE_LIKE_SUCCESS,
+  DELETE_LIKE_FAILURE
 } from "../actions/constants";
 
 const initialState = {
@@ -51,7 +54,29 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        likes: [action.payload, ...state.likes]
+        likes: [action.payload.like, ...state.likes]
+      };
+    case DELETE_LIKE_BEGIN:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    case DELETE_LIKE_SUCCESS:
+      const updated = [...state.likes];
+      const index = updated.map(like => like.id).indexOf(action.payload.likeId);
+      updated.splice(index, 1);
+      return {
+        ...state,
+        loading: false,
+        likes: updated
+      };
+    case DELETE_LIKE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error,
+        likes: []
       };
     default:
       return state;
