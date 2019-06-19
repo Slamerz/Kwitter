@@ -5,7 +5,10 @@ import {
   domain,
   UPDATE_PROFILE_FAILURE,
   UPDATE_PROFILE_SUCCESS,
-  UPDATE_PROFILE_BEGIN
+  UPDATE_PROFILE_BEGIN,
+  UPDATE_PROFILE_PICTURE_FAILURE,
+  UPDATE_PROFILE_PICTURE_SUCCESS,
+  UPDATE_PROFILE_PICTURE_BEGIN
 } from "./constants";
 import { handleJsonResponse } from "./constants"
 
@@ -62,7 +65,8 @@ export function updateprofile(displayName) {
     return fetch(domain + "/users/" + usersId, {
       method: "PATCH",
       body: JSON.stringify({
-        displayName: displayName
+        displayName: displayName,
+        
       }),
       headers: {
         Authorization: "Bearer" + token,
@@ -78,3 +82,15 @@ export function updateprofile(displayName) {
       .catch(error => dispatch(updateprofileFailure(error)));
   };
 }
+
+export const updateProfilePictureBegin = () => ({
+  type: UPDATE_PROFILE_PICTURE_BEGIN
+});
+export const updateProfilePictureSuccess = user => ({
+  type: UPDATE_PROFILE_PICTURE_SUCCESS,
+  payload: { user }
+});
+export const updateProfilePictureFailure = error => ({
+  type: UPDATE_PROFILE_PICTURE_FAILURE,
+  payload: { error }
+});
