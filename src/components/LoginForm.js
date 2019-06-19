@@ -52,7 +52,9 @@ class LoginForm extends Component {
             </button>
             <br />
             <br />
+            <div class="registerbutton">
             <CollapseLoginButton />
+            </div>
           </form>
         </div>
         {isLoading && <Spinner name="circle" color="blue" />}

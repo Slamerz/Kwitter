@@ -16,10 +16,9 @@ code {
 .profile-pic {
   width: 100px;
   height: 100px;
-  border-radius:500px;
-  border:  solid 1px rgb(5, 5, 5);
+  border-radius: 500px;
+  border: solid 1px rgb(5, 5, 5);
 }
-
 
 .avatar {
   width: 34px;
@@ -34,7 +33,6 @@ code {
 
 .username {
   color: #aaaaaa;
-
 }
 
 .date {
@@ -55,7 +53,7 @@ code {
   font-weight: 400;
 }
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: flex-start;
 }
@@ -64,15 +62,15 @@ code {
   width: 25%;
 }
 
-.button{
+.button {
   margin: 0;
 }
 
-.profilepage{
+.profilepage {
   display: flex;
 }
 
-.userlist{
+.userlist {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 8px;
@@ -83,53 +81,55 @@ code {
   border-radius: 10px;
 }
 
-.usernamebutton{
+.usernamebutton {
   width: 100%;
 }
 
-.loginformholder{
-  width:500px;
-  height:500px;
-  text-align:center;
+.loginformholder {
+  width: 500px;
+  height: 500px;
+  text-align: center;
   margin: 100px auto auto;
-  border:1px solid grey;
-  border-radius:10px;
-  background-color:teal;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: teal;
 }
-form{
-  margin-top:50px;
+form {
+  margin-top: 50px;
 }
 
-.loginheader{
-  text-align:center;
+.loginheader {
+  text-align: center;
   color: lightgray;
   margin: 40px;
 }
-.inputlogin{
-  width:300px;
-  margin-top:15px;
-  color:lightgray;
-  background-color:#e6f2ff;
-  height:40px;
+.inputlogin {
+  width: 300px;
+  margin-top: 15px;
+  color: lightgray;
+  background-color: #e6f2ff;
+  height: 40px;
   border-radius: 5px;
-  text-align:center;
-
-} 
-.loginbutton{
-  width:300px;
-  margin-top:15px;
-  margin-left:90px;
-  
+  text-align: center;
+}
+.loginbutton {
+  width: 300px;
+  margin-top: 15px;
+  margin-left: 90px;
 }
 
-.userlabel{
+.userlabel {
   color: lightgray;
   font-weight: bold;
 }
-.postbar{
-  width: 100%
+.postbar {
+  width: 100%;
 }
 
-.postbar input{
+.postbar input {
   width: inherit;
+}
+
+.registerbutton {
+  background-color:teal;
 }

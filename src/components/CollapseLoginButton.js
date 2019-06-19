@@ -22,7 +22,7 @@ class CollapseLoginButton extends Component {
           <div className="p-3 mt-3 border rounded">
             <Form onSubmit={this.handleOnSubmit}>
               <br />
-              <label color="yellow">New user? Register here.</label>
+              <label color="Yellow">New user? Register here.</label>
               <br />
               <br />
               <FormGroup inline>
@@ -30,6 +30,7 @@ class CollapseLoginButton extends Component {
                   name="username"
                   type="text"
                   label="Username"
+                  placeholder="Enter your New Username"
                   onChange={this.handleOnChange}
                   // value={this.state.userDetails.username} autoFocus
                 />
@@ -39,6 +40,7 @@ class CollapseLoginButton extends Component {
                   name="password"
                   type="password"
                   label="Password"
+                  placeholder="Enter your New Password"
                   onChange={this.handleOnChange}
                   // value={this.state.userDetails.password}
                 />
@@ -48,6 +50,7 @@ class CollapseLoginButton extends Component {
                   name="confirmPassword"
                   type="password"
                   label="Confirm Password"
+                  placeholder="Confirm Password"
                   onChange={this.handleOnChange}
                   // value={this.state.userDetails.confirmPassword}
                 />
@@ -58,6 +61,7 @@ class CollapseLoginButton extends Component {
                   name="displayName"
                   type="text"
                   label="Display Name"
+                  placeholder="Choose a Displayname"
                   onChange={this.handleOnChange}
                   // value={this.state.userDetails.displayName}
                 />
