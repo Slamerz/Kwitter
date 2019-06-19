@@ -1,7 +1,13 @@
 import { connect } from "react-redux";
 import Feed from "../components/Feed";
 import React from "react";
-import {fetchLikes, fetchTweets, fetchUsers, postLike} from "../actions";
+import {
+  deleteLike,
+  fetchLikes,
+  fetchTweets,
+  fetchUsers,
+  postLike
+} from "../actions";
 
 class VisibleFeed extends React.Component {
   componentDidMount() {
@@ -19,21 +25,28 @@ class VisibleFeed extends React.Component {
       usersLoading,
       usersError,
       likes,
-      likesLoading,
       likesError,
       loginError,
       loginLoading,
       login,
+      postLike,
+      deleteLike
     } = this.props;
     if (usersError || tweetsError || likesError || loginError) {
       return <div> Error! </div>;
     }
-    if (usersLoading || tweetsLoading || likesLoading || loginLoading) {
+    if (usersLoading || tweetsLoading || loginLoading) {
       return <div>Loading...</div>;
     }
 
     return (
-      <Feed tweets={tweets} users={users} likes={likes} login={login} postLike={this.props.postLike}/>
+      <Feed
+        tweets={tweets}
+        users={users}
+        likes={likes}
+        login={login}
+        likeActions={{ delete: deleteLike, post: postLike }}
+      />
     );
   }
 }
@@ -55,10 +68,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   postLike,
+  deleteLike,
   fetchTweets,
   fetchLikes,
   fetchUsers
 };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(VisibleFeed);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VisibleFeed);
