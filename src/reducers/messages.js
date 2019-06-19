@@ -1,8 +1,4 @@
-import {
-  FETCH_TWEETS_BEGIN,
-  FETCH_TWEETS_FAILURE,
-  FETCH_TWEETS_SUCCESS
-} from "../actions/constants";
+import {FETCH_TWEETS_BEGIN, FETCH_TWEETS_FAILURE, FETCH_TWEETS_SUCCESS, CREATE_TWEET, DELETE_TWEET} from "../actions/constants";
 
 const initialState = {
   tweets: [],
@@ -30,6 +26,11 @@ export default (state = initialState, action) => {
         loading: false,
         error: action.payload.error,
         tweets: []
+      };
+    case CREATE_TWEET:
+      return {
+        ...state,
+        tweets: [action.payload.tweet, ...state.tweets]
       };
     default:
       return state;

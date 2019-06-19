@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBarComp from "./NavBarComp";
-import Postbar from "./Postbar";
+import Postbar from "../containers/Postbar";
 import { Container, Row, Col } from "shards-react";
 import VisibleFeed from "../containers/VisibleFeed";
 import Users from "../containers/Users";
@@ -17,10 +17,12 @@ export default class Homepage extends Component {
               <ProCard />
             </Col>
             <Col>
-              <Row>
-                <Postbar />
-              </Row>
-              <Row>{<VisibleFeed />}</Row>
+                <Row>
+                    <Postbar />
+                </Row>
+                <Row>
+                    <VisibleFeed />
+                </Row>
             </Col>
             <Col>
               <Users />

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBarComp from "./NavBarComp";
 import ProCard from "../containers/ProCard";
 import VisibleFeed from "../containers/VisibleFeed";
-import Postbar from "./Postbar";
+import Postbar from "../containers/Postbar";
 import { Col, Container, Row } from "shards-react";
 import Users from "../containers/Users";
 
@@ -20,7 +20,7 @@ class ProfilePage extends Component {
               <Row>
                 <Postbar />
               </Row>
-              <Row>{<VisibleFeed />}</Row>
+              <Row><VisibleFeed /></Row>
             </Col>
             <Col>
               <Users />

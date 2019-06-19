@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LikeButton from "./LikeButton";
 import { domain } from "../actions/constants";
+
 class Tweet extends Component {
   render() {
     const { tweet, author, likes, login, likeActions } = this.props;
@@ -27,6 +28,10 @@ class Tweet extends Component {
     } else {
       return <div />;
     }
+    return(
+      <div></div>
+    )
   }
 }
+
 export default Tweet;
