@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormInput, FormGroup, Collapse } from "shards-react";
-// import Collapse from "shards-react/collapse";
-// import Form  from "shards-react";
+
 
 class CollapseLoginButton extends Component {
   constructor(props) {
@@ -32,7 +31,7 @@ class CollapseLoginButton extends Component {
                   label="Username"
                   placeholder="Enter your New Username"
                   onChange={this.handleOnChange}
-                  // value={this.state.userDetails.username} autoFocus
+                  
                 />
               </FormGroup>
               <FormGroup inline>
@@ -42,7 +41,7 @@ class CollapseLoginButton extends Component {
                   label="Password"
                   placeholder="Enter your New Password"
                   onChange={this.handleOnChange}
-                  // value={this.state.userDetails.password}
+                  
                 />
               </FormGroup>
               <FormGroup inline>
@@ -52,7 +51,7 @@ class CollapseLoginButton extends Component {
                   label="Confirm Password"
                   placeholder="Confirm Password"
                   onChange={this.handleOnChange}
-                  // value={this.state.userDetails.confirmPassword}
+                  
                 />
               </FormGroup>
 
@@ -63,7 +62,7 @@ class CollapseLoginButton extends Component {
                   label="Display Name"
                   placeholder="Choose a Displayname"
                   onChange={this.handleOnChange}
-                  // value={this.state.userDetails.displayName}
+                  
                 />
               </FormGroup>
               <br />

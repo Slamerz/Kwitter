@@ -32,11 +32,7 @@ export default (state = initialState, action) => {
         error: action.payload.error,
         users: []
       };
-    case REGISTER_USER:
-      return {
-        ...state,
-        message: ""
-      };
+    
 
     default:
       return state;
