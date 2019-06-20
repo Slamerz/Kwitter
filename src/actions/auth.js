@@ -5,7 +5,6 @@ import { push } from "connected-react-router";
 export const LOGIN = "LOGIN";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
-
 const url = domain + "/auth";
 
 // action creators
@@ -21,6 +20,7 @@ const login = loginData => dispatch => {
   })
     .then(handleJsonResponse)
     .then(result => {
+      console.log(result)
       return dispatch({
         type: LOGIN_SUCCESS,
         payload: result

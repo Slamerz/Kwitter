@@ -131,3 +131,7 @@ form {
 .postbar input {
   width: inherit;
 }
+
+.registerbutton {
+  background-color:teal;
+}

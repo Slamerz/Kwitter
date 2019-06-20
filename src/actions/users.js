@@ -17,6 +17,7 @@ export const fetchUsersFailure = error => ({
   payload: { error }
 });
 
+
 export function fetchUsers() {
   return dispatch => {
     dispatch(fetchUsersBegin());
@@ -29,6 +30,30 @@ export function fetchUsers() {
       })
       .catch(error => dispatch(fetchUsersFailure(error)));
   };
+}
+export const registerUser  = (userDetails) => {
+  
+  return function(dispatch){
+
+      const registerUrl = domain + "/users";
+
+      const postRequestOptions = {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(userDetails),
+      }
+
+      fetch(registerUrl, postRequestOptions)
+      .then(response => response.json())
+      .then(data => {
+          console.log("data: ", data);
+         return { userDetails: {username: data.username,displayName: data.displayName}}
+      }).catch(error => {
+          return error;
+      });
+  }
 }
 
 // Handle HTTP errors since fetch won't.

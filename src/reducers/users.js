@@ -1,7 +1,8 @@
 import {
   FETCH_USERS_BEGIN,
   FETCH_USERS_FAILURE,
-  FETCH_USERS_SUCCESS
+  FETCH_USERS_SUCCESS,
+  REGISTER_USER
 } from "../actions/constants";
 
 const initialState = {
@@ -31,6 +32,8 @@ export default (state = initialState, action) => {
         error: action.payload.error,
         users: []
       };
+    
+
     default:
       return state;
   }
