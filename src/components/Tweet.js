@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import LikeButton from "./LikeButton";
 import { domain } from "../actions/constants";
+import DeleteButton from "./DeleteButton";
 
 class Tweet extends Component {
   render() {
-    const { tweet, author, likes, login, likeActions } = this.props;
+    const { tweet, author, likes, login, likeActions, deleteActions } = this.props;
     if (tweet && author) {
       const avatarUrl = author.pictureLocation
         ? domain + author.pictureLocation
@@ -23,6 +24,11 @@ class Tweet extends Component {
             login={login}
             likeActions={likeActions}
           />
+          <DeleteButton
+            messageId={tweet.id}
+            login={login}
+            deleteActions={deleteActions}
+            />
         </div>
       );
     } else {
