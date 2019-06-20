@@ -32,18 +32,6 @@ export default (state = initialState, action) => {
         ...state,
         tweets: [action.payload.tweet, ...state.tweets]
       };
-      case DELETE_TWEET_BEGIN:
-        return {
-          ...state,
-          loading: true,
-          error: null
-        }
-      case DELETE_TWEET_SUCCESS:
-        return {
-          ...state,
-          loading: false,
-          tweets: []
-        }
       case DELETE_TWEET_FAILURE:
         return {
           ...state,

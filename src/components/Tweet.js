@@ -5,7 +5,7 @@ import DeleteButton from "./DeleteButton";
 
 class Tweet extends Component {
   render() {
-    const { tweet, author, likes, login, likeActions, deleteActions } = this.props;
+    const { tweet, author, likes, login, likeActions, deleteTweetAction } = this.props;
     if (tweet && author) {
       const avatarUrl = author.pictureLocation
         ? domain + author.pictureLocation
@@ -27,7 +27,7 @@ class Tweet extends Component {
           <DeleteButton
             messageId={tweet.id}
             login={login}
-            deleteActions={deleteActions}
+            deleteTweetAction={deleteTweetAction}
             />
         </div>
       );

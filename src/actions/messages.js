@@ -3,8 +3,6 @@ import {
   FETCH_TWEETS_SUCCESS,
   FETCH_TWEETS_BEGIN,
   CREATE_TWEET,
-  DELETE_TWEET_BEGIN,
-  DELETE_TWEET_SUCCESS,
   DELETE_TWEET_FAILURE,
   domain,
   handleJsonResponse,
@@ -28,15 +26,6 @@ export const postTweet = tweet => ({
   type: CREATE_TWEET,
   payload: {tweet}
 });
-
-export const deleteTweetBegin = () => ({
-  type: DELETE_TWEET_BEGIN
-});
-
-export const deleteTweetSuccess = messageId => ({
-  type: DELETE_TWEET_SUCCESS,
-  payload: { messageId }
-})
 
 export const deleteTweetFailure = error => ({
   type: DELETE_TWEET_FAILURE,
@@ -82,19 +71,18 @@ export const createTweet = text => dispatch => {
     });
 };
 
-export function deleteTweet(messageId, userToken) {
+export function deleteTweet(messageId) {
+  const token = store.getState().auth.login.token
   return dispatch => {
-    dispatch(deleteTweetBegin())
     fetch(`${domain}/messages/${messageId}`, {
       method: 'delete',
       headers: {
-        Authorization: `Bearer ${userToken}`
+        Authorization: `Bearer ${token}`
       }
     })
-      .then(res => res.json())
-      .then(json => {
-        dispatch(deleteTweetSuccess(messageId))
-        return json
+      .then(res => {
+        dispatch(fetchTweets())
+        return res
       })
       .catch(error => deleteTweetFailure(error))
   }
