@@ -2,7 +2,13 @@ import {
   FETCH_USERS_BEGIN,
   FETCH_USERS_FAILURE,
   FETCH_USERS_SUCCESS,
-  REGISTER_USER
+  REGISTER_USER,
+  UPDATE_PROFILE_FAILURE,
+  UPDATE_PROFILE_SUCCESS,
+  UPDATE_PROFILE_BEGIN,
+  UPDATE_PROFILE_PICTURE_FAILURE,
+  UPDATE_PROFILE_PICTURE_SUCCESS,
+  UPDATE_PROFILE_PICTURE_BEGIN
 } from "../actions/constants";
 
 const initialState = {
@@ -32,8 +38,44 @@ export default (state = initialState, action) => {
         error: action.payload.error,
         users: []
       };
-    
-
+    case UPDATE_PROFILE_BEGIN:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    case UPDATE_PROFILE_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        user: action.payload.users
+      };
+    case UPDATE_PROFILE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error,
+        user: []
+      };
+    case UPDATE_PROFILE_PICTURE_BEGIN:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    case UPDATE_PROFILE_PICTURE_SUCCESS:
+      return {
+        ...state,
+        loading: false
+        // user: action.payload.users
+      };
+    case UPDATE_PROFILE_PICTURE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error,
+        user: []
+      };
     default:
       return state;
   }

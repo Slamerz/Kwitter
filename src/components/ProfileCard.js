@@ -33,7 +33,7 @@ class ProfileCard extends Component {
         <Card style={{ maxWidth: "300px" }}>
           <Link to={"/profile/" + id}>
             <CardHeader>{username}</CardHeader>
-            <CardImg src={avatarUrl} style={{ maxHeight: "300px" }} />
+            <CardImg src={avatarUrl} style={{ maxHeight: "300px", maxWidth: "300px"}} />
           </Link>
           <CardBody>
             <Link to={"/profile/" + id}>
