@@ -11,6 +11,7 @@ import {
   UPDATE_PROFILE_PICTURE_BEGIN
 } from "./constants";
 import { handleJsonResponse } from "./constants"
+import { push } from "connected-react-router";
 
 export const fetchUsersBegin = () => ({
   type: FETCH_USERS_BEGIN
@@ -31,7 +32,7 @@ export function fetchUsers() {
       .then(handleJsonResponse)
       .then(json => {
         console.log(json)
-        // dispatch(fetchUsersSuccess(json.users));
+        dispatch(fetchUsersSuccess(json.users));
         return json.users;
       })
       .catch(error => dispatch(fetchUsersFailure(error)));
@@ -78,6 +79,7 @@ export function updateProfile(displayName) {
       .then(json => {
         console.log(json)
         dispatch(updateprofileSuccess(json.user));
+        dispatch(push('/homepage'))
         return json.user;
       })
       .catch(error => dispatch(updateprofileFailure(error)));

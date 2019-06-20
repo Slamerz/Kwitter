@@ -32,18 +32,19 @@ class EditProfileCard extends Component {
         <CardHeader>Username</CardHeader>
         <CardImg src="https://place-hold.it/300x200" />
         <CardBody>
-          <CardTitle> Edit DisplayName :</CardTitle>
+        <CardTitle> choose Image:</CardTitle>
+
           <form onSubmit={this.handleUpdateProfile}>
             <FormInput
               type="file"
               name="picture"
-            />
+              />
+              <CardTitle> Edit DisplayName :</CardTitle>
             <FormInput
               placeholder="type in new displayname"
               onChange={this.handleChange}
               value={this.state.value}
             />
-            <CardTitle>Edit bio:</CardTitle>
             <Button type="submit">Save &rarr;</Button>
           </form>
 
