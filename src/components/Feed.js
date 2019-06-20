@@ -3,7 +3,7 @@ import Tweet from "./Tweet";
 
 class Feed extends Component {
   render() {
-    const { tweets, users, likes, login, likeActions } = this.props;
+    const { tweets, users, likes, login, likeActions, deleteTweetAction } = this.props;
     this.tweets = tweets.map(tweet => {
       const author = users.filter(user => user.id === tweet.userId)[0];
       this.likes = likes.filter(like => like.messageId === tweet.id);
@@ -15,6 +15,7 @@ class Feed extends Component {
           likes={this.likes}
           login={login}
           likeActions={likeActions}
+          deleteTweetAction={deleteTweetAction}
         />
       );
     });

@@ -3,11 +3,12 @@ import {
   FETCH_TWEETS_SUCCESS,
   FETCH_TWEETS_BEGIN,
   CREATE_TWEET,
-  //DELETE_TWEET,
+  DELETE_TWEET_FAILURE,
   domain,
   handleJsonResponse,
   jsonHeaders
 } from "./constants";
+import { push } from "connected-react-router";
 import { store } from "../index";
 
 export const fetchTweetsBegin = () => ({
@@ -26,6 +27,11 @@ export const postTweet = tweet => ({
   type: CREATE_TWEET,
   payload: {tweet}
 });
+
+export const deleteTweetFailure = error => ({
+  type: DELETE_TWEET_FAILURE,
+  payload: { error }
+})
 
 export function fetchTweets() {
   return dispatch => {
@@ -62,7 +68,26 @@ export const createTweet = text => dispatch => {
     .then(handleJsonResponse)
     .then(res => {
       console.log(res);
+      dispatch(push('/homepage'));
       return dispatch(postTweet(res.message));
     });
 };
+
+export function deleteTweet(messageId) {
+  const token = store.getState().auth.login.token
+  return dispatch => {
+    fetch(`${domain}/messages/${messageId}`, {
+      method: 'delete',
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => {
+        dispatch(fetchTweets())
+        return res
+      })
+      .catch(error => deleteTweetFailure(error))
+  }
+}
+
 

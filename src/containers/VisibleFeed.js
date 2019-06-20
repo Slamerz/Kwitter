@@ -6,7 +6,8 @@ import {
   fetchLikes,
   fetchTweets,
   fetchUsers,
-  postLike
+  postLike,
+  deleteTweet
 } from "../actions";
 
 class VisibleFeed extends React.Component {
@@ -32,7 +33,8 @@ class VisibleFeed extends React.Component {
       loginLoading,
       login,
       postLike,
-      deleteLike
+      deleteLike,
+      deleteTweet
     } = this.props;
     let filteredTweets = tweets;
     if (usersError || tweetsError || likesError || loginError) {
@@ -59,6 +61,7 @@ class VisibleFeed extends React.Component {
         likes={likes}
         login={login}
         likeActions={{ delete: deleteLike, post: postLike }}
+        deleteTweetAction={ deleteTweet }
       />
     );
   }
@@ -84,7 +87,8 @@ const mapDispatchToProps = {
   deleteLike,
   fetchTweets,
   fetchLikes,
-  fetchUsers
+  fetchUsers,
+  deleteTweet
 };
 
 export default connect(
