@@ -34,9 +34,8 @@ export function fetchUsers() {
 export const registerUser  = (userDetails) => {
   
   return function(dispatch){
-      console.log("userDetails", userDetails);
 
-      const registerUrl = domain + "/auth/register";
+      const registerUrl = domain + "/users";
 
       const postRequestOptions = {
           method: "POST",

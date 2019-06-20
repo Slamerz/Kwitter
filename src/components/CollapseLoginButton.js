@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Form, FormInput, FormGroup, Collapse } from "shards-react";
 import { registerUser } from "../actions/users";
+import { connect } from 'react-redux'
 
 
 class CollapseLoginButton extends Component {
@@ -14,13 +15,26 @@ class CollapseLoginButton extends Component {
     this.setState({ collapse: !this.state.collapse });
   }
 
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleRegister = e => {
+    e.preventDefault()
+    this.props.registerUser({
+      username: this.state.username,
+      password: this.state.password,
+      displayName: this.state.displayName
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
         <Button onClick={this.toggle}>Register</Button>
         <Collapse open={this.state.collapse}>
           <div className="p-3 mt-3 border rounded">
-            <Form onSubmit={registerUser}>
+            <Form onSubmit={this.handleRegister}>
               <br />
               <label color="Yellow">New user? Register here.</label>
               <br />
@@ -31,7 +45,7 @@ class CollapseLoginButton extends Component {
                   type="text"
                   label="Username"
                   placeholder="Enter your New Username"
-                  onChange={this.handleOnChange}
+                  onChange={this.handleChange}
                   
                 />
               </FormGroup>
@@ -41,7 +55,7 @@ class CollapseLoginButton extends Component {
                   type="password"
                   label="Password"
                   placeholder="Enter your New Password"
-                  onChange={this.handleOnChange}
+                  onChange={this.handleChange}
                   
                 />
               </FormGroup>
@@ -51,7 +65,6 @@ class CollapseLoginButton extends Component {
                   type="password"
                   label="Confirm Password"
                   placeholder="Confirm Password"
-                  onChange={this.handleOnChange}
                   
                 />
               </FormGroup>
@@ -62,7 +75,7 @@ class CollapseLoginButton extends Component {
                   type="text"
                   label="Display Name"
                   placeholder="Choose a Displayname"
-                  onChange={this.handleOnChange}
+                  onChange={this.handleChange}
                   
                 />
               </FormGroup>
@@ -79,4 +92,7 @@ class CollapseLoginButton extends Component {
   }
 }
 
-export default CollapseLoginButton;
+export default connect(
+  null,
+  { registerUser }
+)(CollapseLoginButton)

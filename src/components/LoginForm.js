@@ -52,10 +52,10 @@ class LoginForm extends Component {
             </button>
             <br />
             <br />
-            <div class="registerbutton">
-            <CollapseLoginButton />
-            </div>
           </form>
+          <div class="registerbutton">
+            <CollapseLoginButton />
+          </div>
         </div>
         {isLoading && <Spinner name="circle" color="blue" />}
         {err && <p style={{ color: "red" }}>{err}</p>}
