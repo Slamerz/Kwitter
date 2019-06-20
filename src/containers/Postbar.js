@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Form, FormInput, FormGroup } from "shards-react";
+import { Form, FormTextarea, FormInput, FormGroup } from "shards-react";
 import { createTweet } from "../actions";
 import { connect } from "react-redux";
-console.log(createTweet)
+console.log(createTweet);
 
 class PostBar extends Component {
   state = {
@@ -11,10 +11,18 @@ class PostBar extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+
+    const textBox = document.getElementById("textbox");
+
+    if (this.state.value !== "") {
+      textBox.style.height = "150px";
+    } else {
+      textBox.style.height = "50px";
+    }
   };
 
   handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
     this.props.createTweet(this.state.text);
   };
 
@@ -22,7 +30,9 @@ class PostBar extends Component {
     return (
       <Form onSubmit={this.handleSubmit} className="postbar">
         <FormGroup>
-          <FormInput
+          <FormTextarea
+            className="textbox"
+            id="textbox"
             placeholder="What's Happening?"
             autoFocus
             name="text"
