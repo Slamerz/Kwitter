@@ -57,7 +57,11 @@ code {
 
 .navbar {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
+  align-content: baseline;
+  align-items: baseline;
+  height: 100px;
   /* overflow:hidden; */
 }
 
