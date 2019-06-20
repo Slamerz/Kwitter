@@ -20,6 +20,7 @@ class LoginForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
+        <div className="something"></div>
         <div class="loginformholder">
           <h1 class="loginheader">LOGIN</h1>
           <form onSubmit={this.handleLogin}>

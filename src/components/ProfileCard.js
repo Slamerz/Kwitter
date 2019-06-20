@@ -30,7 +30,7 @@ class ProfileCard extends Component {
         ? domain + pictureLocation
         : "https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png";
       return (
-        <Card style={{ maxWidth: "300px" }}>
+        <Card className="procard" style={{ maxWidth: "300px" }}>
           <Link to={"/profile/" + id}>
             <CardHeader>{username}</CardHeader>
             <CardImg src={avatarUrl} style={{ maxHeight: "300px", maxWidth: "300px"}} />
