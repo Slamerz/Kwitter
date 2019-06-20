@@ -1,4 +1,8 @@
-import {FETCH_USERS_BEGIN, 
+import {
+  FETCH_USERS_BEGIN,
+  FETCH_USERS_FAILURE,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_BEGIN, 
   FETCH_USERS_FAILURE, 
   FETCH_USERS_SUCCESS,
   UPDATE_PROFILE_FAILURE,
@@ -17,7 +21,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-
     case FETCH_USERS_BEGIN:
       return {
         ...state,

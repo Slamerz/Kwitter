@@ -9,11 +9,7 @@ class List extends React.Component {
   }
 
   render() {
-    const {
-      users,
-      usersLoading,
-      usersError
-    } = this.props;
+    const { users, usersLoading, usersError } = this.props;
     if (usersError) {
       return <div> Error! {users.message}</div>;
     }
@@ -28,7 +24,7 @@ class List extends React.Component {
 const mapStateToProps = state => ({
   users: state.users.users,
   usersLoading: state.users.loading,
-  usersError: state.users.error,
+  usersError: state.users.error
 });
 
 export default connect(mapStateToProps)(List);
