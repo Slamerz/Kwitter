@@ -5,15 +5,17 @@ class DeleteButton extends Component {
   render() {
     const { messageId, deleteTweetAction } = this.props;
     return (
-      <div>
+      <span>
         <a
+          className="deleteButton"
           onClick={() => deleteTweetAction(messageId)}
         >
-          <Button  pill outline theme="info">
-          Delete
-          </Button>
+          <img
+            alt="deleteButton"
+            src="https://docs.qgis.org/2.14/ro/_images/mActionDeleteSelected.png"
+          />
         </a>
-      </div>
+      </span>
     );
   }
 }

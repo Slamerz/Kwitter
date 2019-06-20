@@ -134,3 +134,28 @@ form {
   word-wrap: break-word;
 }
 
+.tweetHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.pushRight {
+  flex-direction: row-reverse;
+}
+
+.deleteButton {
+  transition: all 500ms;
+  height: 30px;
+  width: 30px;
+}
+
+.deleteButton img {
+  height: 25px;
+  width: 25px;
+}
+.deleteButton:hover {
+  border-radius: 50%;
+  background-color: yellow;
+}
