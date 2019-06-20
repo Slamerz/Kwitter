@@ -94,3 +94,26 @@ export const updateProfilePictureFailure = error => ({
   type: UPDATE_PROFILE_PICTURE_FAILURE,
   payload: { error }
 });
+export const updateProfilePicture = file => dispatch => {
+  return (dispatch, getState) => {
+    dispatch(updateProfilePictureBegin());
+    const usersId = getState().auth.login.id;
+    const token = getState().auth.login.token;
+
+    return fetch(domain + "/users/" + usersId + "picture", {
+      method: "PUT",
+      body: file,
+      headers: {
+        Authorization: "Bearer" + token
+      }
+    })
+      .then(handleErrors)
+      .then(res => res.json())
+      .then(json => {
+        if(json.statusCode === 200){
+        return dispatch(updateProfilePictureSuccess());
+      }
+      })
+      .catch(error => dispatch(updateProfilePictureFailure(error)));
+  };
+}
