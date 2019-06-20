@@ -18,6 +18,8 @@ class VisibleFeed extends React.Component {
 
   render() {
     const {
+      filterId,
+      filterString,
       tweetsError,
       tweetsLoading,
       tweets,
@@ -32,16 +34,27 @@ class VisibleFeed extends React.Component {
       postLike,
       deleteLike
     } = this.props;
+    let filteredTweets = tweets;
     if (usersError || tweetsError || likesError || loginError) {
       return <div> Error! </div>;
     }
     if (usersLoading || tweetsLoading || loginLoading) {
       return <div>Loading...</div>;
     }
+    if (filterId || filterString) {
+      if (filterId)
+        filteredTweets = filteredTweets.filter(
+          tweet => +tweet.userId === +filterId
+        );
+      if (filterString)
+        filteredTweets = filteredTweets.filter(tweet =>
+          tweet.text.includes(filterString)
+        );
+    }
 
     return (
       <Feed
-        tweets={tweets}
+        tweets={filteredTweets}
         users={users}
         likes={likes}
         login={login}

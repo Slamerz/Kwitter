@@ -8,6 +8,7 @@ import ProCard from "../containers/ProCard";
 
 export default class Homepage extends Component {
   render() {
+      const filterString = this.props.match.params.filter;
     return (
       <React.Fragment>
         <NavBarComp />
@@ -21,7 +22,7 @@ export default class Homepage extends Component {
                     <Postbar />
                 </Row>
                 <Row>
-                    <VisibleFeed />
+                    <VisibleFeed filterString={filterString}/>
                 </Row>
             </Col>
             <Col>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LikeButton from "./LikeButton";
 import { domain } from "../actions/constants";
+import { Link } from "react-router-dom";
 
 class Tweet extends Component {
   render() {
@@ -12,9 +13,11 @@ class Tweet extends Component {
       const date = new Date(tweet.createdAt).toLocaleDateString();
       return (
         <div key={tweet.id} className="tweet">
-          <img src={avatarUrl} className="avatar" alt="profile image" />
-          <span className="displayName">{author.displayName}</span>
-          <span className="username">@{author.username}</span>
+          <Link to={"/profile/" + author.id}>
+            <img src={avatarUrl} className="avatar" alt="profile image" />
+            <span className="displayName">{author.displayName}</span>
+            <span className="username">@{author.username}</span>
+          </Link>
           <span className="date">{date}</span>
           <p>{tweet.text}</p>
           <LikeButton
@@ -28,9 +31,6 @@ class Tweet extends Component {
     } else {
       return <div />;
     }
-    return(
-      <div></div>
-    )
   }
 }
 
