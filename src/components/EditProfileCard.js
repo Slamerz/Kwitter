@@ -1,4 +1,4 @@
-import React, {Component}from "react";
+import React, { Component } from "react";
 import {
   Card,
   CardHeader,
@@ -7,37 +7,53 @@ import {
   CardBody,
   CardFooter,
   Button,
-  FormInput
+  FormInput,
 } from "shards-react";
+import { connect } from 'react-redux'
+import { updateProfile, updateProfilePicture } from '../actions'
 
-export default class EditProfileCard extends Component { 
-    state = { value: "" }
+class EditProfileCard extends Component {
+  state = { value: "" };
 
+  handleUpdateProfile = event => {
+    event.preventDefault()
 
-     handleUpdateprofile = (event) => {
-         console.log (this.state.value)
-         this.props.updateProfile(this.state.value)
-        }
-     handleChange = event => {
-        this.setState({ value: event.target.value })
-      }
-    render(){
+    const formData = new FormData(event.target)
+    this.props.updateProfilePicture(formData)
 
-        return (
-            <Card style={{ maxWidth: "300px" }}>
-      <CardHeader>Username</CardHeader>
-      <CardImg src="https://place-hold.it/300x200" />
-      <CardBody>
-        <CardTitle> Edit DisplayName :</CardTitle>
-        <FormInput placeholder= "type in new displayname" 
-        onChange ={this.handleChange}
-        value= {this.state.value}/>
-        <CardTitle>Edit bio:</CardTitle>
+    this.props.updateProfile(this.state.value);
+  };
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+  render() {
+    return (
+      <Card style={{ maxWidth: "300px" }}>
+        <CardHeader>Username</CardHeader>
+        <CardImg src="https://place-hold.it/300x200" />
+        <CardBody>
+          <CardTitle> Edit DisplayName :</CardTitle>
+          <form onSubmit={this.handleUpdateProfile}>
+            <FormInput
+              type="file"
+              name="picture"
+            />
+            <FormInput
+              placeholder="type in new displayname"
+              onChange={this.handleChange}
+              value={this.state.value}
+            />
+            <CardTitle>Edit bio:</CardTitle>
+            <Button type="submit">Save &rarr;</Button>
+          </form>
 
-
-        <Button onClick={this.handleUpdateprofile}>Save &rarr;</Button>
-      </CardBody>
-    </Card>
-  );
+        </CardBody>
+      </Card>
+    );
+  }
 }
-}
+
+export default connect(
+  ({}),
+  { updateProfile, updateProfilePicture }
+)(EditProfileCard)

@@ -56,7 +56,7 @@ export const updateprofileFailure = error => ({
   type: UPDATE_PROFILE_FAILURE,
   payload: { error }
 });
-export function updateprofile(displayName) {
+export function updateProfile(displayName) {
   return (dispatch, getState) => {
     dispatch(updateprofileBegin());
     const usersId = getState().auth.login.id;
@@ -69,13 +69,14 @@ export function updateprofile(displayName) {
         
       }),
       headers: {
-        Authorization: "Bearer" + token,
+        Authorization: "Bearer " + token,
         "Content-Type": "application/json"
       }
     })
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
+        console.log(json)
         dispatch(updateprofileSuccess(json.user));
         return json.user;
       })
@@ -84,32 +85,33 @@ export function updateprofile(displayName) {
 }
 
 export const updateProfilePictureBegin = () => ({
-  type: UPDATE_PROFILE_PICTURE_BEGIN
+  type: UPDATE_PROFILE_PICTURE_BEGIN // loading true
 });
 export const updateProfilePictureSuccess = user => ({
-  type: UPDATE_PROFILE_PICTURE_SUCCESS,
+  type: UPDATE_PROFILE_PICTURE_SUCCESS, // loading false
   payload: { user }
 });
 export const updateProfilePictureFailure = error => ({
   type: UPDATE_PROFILE_PICTURE_FAILURE,
   payload: { error }
 });
-export const updateProfilePicture = file => dispatch => {
+export function updateProfilePicture(file) {
   return (dispatch, getState) => {
     dispatch(updateProfilePictureBegin());
     const usersId = getState().auth.login.id;
     const token = getState().auth.login.token;
+    console.log('hey')
 
-    return fetch(domain + "/users/" + usersId + "picture", {
+    return fetch(domain + "/users/" + usersId + "/picture", {
       method: "PUT",
       body: file,
       headers: {
-        Authorization: "Bearer" + token
+        Authorization: "Bearer " + token
       }
     })
-      .then(handleErrors)
-      .then(res => res.json())
+      // .then(handleErrors)
       .then(json => {
+        console.log(json)
         if(json.statusCode === 200){
         return dispatch(updateProfilePictureSuccess());
       }
