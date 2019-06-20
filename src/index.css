@@ -46,16 +46,19 @@ code {
   border-radius: 5px;
   padding: 1em;
   margin: 0.5em 0;
+  max-width: 500px;
 }
 
 .tweet p {
   font-size: 16pt;
   font-weight: 400;
+  word-wrap: break-word;
 }
 
 .navbar {
   display: flex;
   justify-content: flex-start;
+  /* overflow:hidden; */
 }
 
 .searchbar {
@@ -126,6 +129,38 @@ form {
   width: 100%;
 }
 
-.postbar input {
-  width: inherit;
+.textbox {
+  height: 50px;
+  resize: vertical;
+  word-wrap: break-word;
+}
+
+.tweetHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.pushRight {
+  flex-direction: row-reverse;
+}
+
+.deleteButton {
+  transition: all 500ms;
+  height: 30px;
+  width: 30px;
+}
+
+.deleteButton img {
+  height: 25px;
+  width: 25px;
+}
+.deleteButton:hover {
+  border-radius: 50%;
+  background-color: yellow;
+}
+
+.registerbutton {
+  background-color:teal;
 }

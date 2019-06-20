@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loginThenGoToUserProfile as login } from "../actions";
 import Spinner from "react-spinkit";
+import CollapseLoginButton from "./CollapseLoginButton";
 
 class LoginForm extends Component {
   state = { username: "", password: "" };
@@ -49,7 +50,12 @@ class LoginForm extends Component {
             <button class="loginbutton" type="submit" disabled={isLoading}>
               Login
             </button>
+            <br />
+            <br />
           </form>
+          <div class="registerbutton">
+            <CollapseLoginButton />
+          </div>
         </div>
         {isLoading && <Spinner name="circle" color="blue" />}
         {err && <p style={{ color: "red" }}>{err}</p>}

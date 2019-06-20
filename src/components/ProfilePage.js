@@ -2,25 +2,26 @@ import React, { Component } from "react";
 import NavBarComp from "./NavBarComp";
 import ProCard from "../containers/ProCard";
 import VisibleFeed from "../containers/VisibleFeed";
-import Postbar from "./Postbar";
+import Postbar from "../containers/Postbar";
 import { Col, Container, Row } from "shards-react";
 import Users from "../containers/Users";
 
 class ProfilePage extends Component {
   render() {
+    const profileId = this.props.match.params.id;
     return (
       <React.Fragment>
         <NavBarComp />
         <Container>
           <Row>
             <Col>
-              <ProCard id={this.props.match.params.id} />
+              <ProCard id={profileId} />
             </Col>
             <Col>
               <Row>
                 <Postbar />
               </Row>
-              <Row>{<VisibleFeed />}</Row>
+              <Row><VisibleFeed filterId={profileId}/></Row>
             </Col>
             <Col>
               <Users />

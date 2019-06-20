@@ -1,21 +1,52 @@
 import React, { Component } from "react";
 import LikeButton from "./LikeButton";
 import { domain } from "../actions/constants";
+import { Link } from "react-router-dom";
+import DeleteButton from "./DeleteButton";
+
 class Tweet extends Component {
   render() {
-    if (this.props.tweet && this.props.author) {
-      const avatarUrl = this.props.author.pictureLocation
-        ? domain + this.props.author.pictureLocation
+    const {
+      tweet,
+      author,
+      likes,
+      login,
+      likeActions,
+      deleteTweetAction
+    } = this.props;
+    if (tweet && author) {
+      const avatarUrl = author.pictureLocation
+        ? domain + author.pictureLocation
         : "https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png";
-      const date = new Date(this.props.tweet.createdAt).toLocaleDateString();
+      const date = new Date(tweet.createdAt).toLocaleDateString();
+      const deleteButton =
+        tweet.userId === login.id ? (
+          <DeleteButton
+            messageId={tweet.id}
+            login={login}
+            deleteTweetAction={deleteTweetAction}
+          />
+        ) : (
+          <span />
+        );
       return (
-        <div key={this.props.tweet.id} className="tweet">
-          <img src={avatarUrl} className="avatar" alt="profile image" />
-          <span className="displayName">{this.props.author.displayName}</span>
-          <span className="username">@{this.props.author.username}</span>
+        <div key={tweet.id} className="tweet">
+        <span className="tweetHeader">
+            <img src={avatarUrl} className="avatar" alt="profile image" />
+            <Link to={"/profile/" + author.id}>
+            <span className="displayName">{author.displayName}</span>
+            <span className="username">@{author.username}</span>
+          </Link>
           <span className="date">{date}</span>
-          <p>{this.props.tweet.text}</p>
-          <LikeButton>{this.props.tweet.likes.length}</LikeButton>
+            {deleteButton}
+          </span>
+          <p>{tweet.text}</p>
+          <LikeButton
+            messageId={tweet.id}
+            likes={likes}
+            login={login}
+            likeActions={likeActions}
+          />
         </div>
       );
     } else {
@@ -23,4 +54,5 @@ class Tweet extends Component {
     }
   }
 }
+
 export default Tweet;

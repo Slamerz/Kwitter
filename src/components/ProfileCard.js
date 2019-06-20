@@ -9,6 +9,7 @@ import {
   CardFooter,
   Button
 } from "shards-react";
+import { Link } from "react-router-dom";
 
 class ProfileCard extends Component {
   render() {
@@ -30,10 +31,14 @@ class ProfileCard extends Component {
         : "https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_960_720.png";
       return (
         <Card style={{ maxWidth: "300px" }}>
-          <CardHeader>{username}</CardHeader>
-          <CardImg src={avatarUrl} style={{ maxHeight: "300px" }} />
+          <Link to={"/profile/" + id}>
+            <CardHeader>{username}</CardHeader>
+            <CardImg src={avatarUrl} style={{ maxHeight: "300px", maxWidth: "300px"}} />
+          </Link>
           <CardBody>
-            <CardTitle>{displayName}</CardTitle>
+            <Link to={"/profile/" + id}>
+              <CardTitle>{displayName}</CardTitle>
+            </Link>
             <p>Joined {createDate.toDateString()}</p>
             <Button>Tweets {this.props.tweets.length}</Button>
           </CardBody>

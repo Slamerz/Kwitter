@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBarComp from "./NavBarComp";
-import Postbar from "./Postbar";
+import Postbar from "../containers/Postbar";
 import { Container, Row, Col } from "shards-react";
 import VisibleFeed from "../containers/VisibleFeed";
 import Users from "../containers/Users";
@@ -8,6 +8,7 @@ import ProCard from "../containers/ProCard";
 
 export default class Homepage extends Component {
   render() {
+      const filterString = this.props.match.params.filter;
     return (
       <React.Fragment>
         <NavBarComp />
@@ -17,10 +18,12 @@ export default class Homepage extends Component {
               <ProCard />
             </Col>
             <Col>
-              <Row>
-                <Postbar />
-              </Row>
-              <Row>{<VisibleFeed />}</Row>
+                <Row>
+                    <Postbar />
+                </Row>
+                <Row>
+                    <VisibleFeed filterString={filterString}/>
+                </Row>
             </Col>
             <Col>
               <Users />
