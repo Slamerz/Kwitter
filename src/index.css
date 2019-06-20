@@ -63,6 +63,7 @@ code {
   align-items: baseline;
   height: 100px;
   /* overflow:hidden; */
+  background-color: rgb(230, 230, 230);
 }
 
 .searchbar {
@@ -71,6 +72,7 @@ code {
 
 .button {
   margin: 0;
+  
 }
 
 .profilepage {
@@ -81,7 +83,7 @@ code {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 8px;
-  border: solid 1px #00afd2;
+  border: solid 1px teal;
   padding: 8px;
   width: 100%;
   text-align: center;
@@ -165,6 +167,15 @@ form {
   background-color: yellow;
 }
 
+.loginbackground {
+  background-repeat: no-repeat;
+  
+}
+
 .registerbutton {
   background-color:teal;
+}
+
+.procard {
+  background-color:white;
 }

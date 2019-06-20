@@ -26,7 +26,7 @@ class NavBarComp extends Component {
 
   render() {
     return (
-      <Navbar className="navbar" theme="primary">
+      <Navbar className="navbar">
         <Button tag={Link} to="/homepage"> Home </Button>
         <SearchBar />
         <Dropdown open={this.state.open} toggle={this.toggle} className="d-table">
