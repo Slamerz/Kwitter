@@ -54,6 +54,6 @@ class EditProfileCard extends Component {
 }
 
 export default connect(
-  ({}),
+  null,
   { updateProfile, updateProfilePicture }
 )(EditProfileCard)
