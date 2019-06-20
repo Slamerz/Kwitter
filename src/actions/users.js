@@ -12,6 +12,7 @@ import {
 } from "./constants";
 import { handleJsonResponse } from "./constants"
 import { push } from "connected-react-router";
+import {loginThenGoToUserProfile} from "./auth";
 
 export const fetchUsersBegin = () => ({
   type: FETCH_USERS_BEGIN
@@ -32,7 +33,6 @@ export function fetchUsers() {
     return fetch(domain + "/users")
       .then(handleJsonResponse)
       .then(json => {
-        console.log(json)
         dispatch(fetchUsersSuccess(json.users));
         return json.users;
       })
@@ -44,25 +44,24 @@ export const registerUser  = (userDetails) => {
   return function(dispatch){
 
       const registerUrl = domain + "/users";
-
       const postRequestOptions = {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
           },
           body: JSON.stringify(userDetails),
-      }
+      };
 
       fetch(registerUrl, postRequestOptions)
       .then(response => response.json())
       .then(data => {
-          console.log("data: ", data);
+          dispatch(loginThenGoToUserProfile({password: userDetails.password, username: userDetails.username}));
          return { userDetails: {username: data.username,displayName: data.displayName}}
       }).catch(error => {
           return error;
       });
   }
-}
+};
 
 // Handle HTTP errors since fetch won't.
 function handleErrors(response) {
