@@ -37,7 +37,7 @@ export const registerUser  = (userDetails) => {
   return function(dispatch){
       console.log("userDetails", userDetails);
 
-      const registerUrl = "https://kwitter-api.herokuapp.com/auth/register";
+      const registerUrl = domain + "/auth/register";
 
       const postRequestOptions = {
           method: "POST",

@@ -1,14 +1,17 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import { UserProfile, Homepage} from ".";
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import { LoginForm, UserProfile } from ".";
 
-
-const App = () => (
-  <Switch>
-    
-    <Route exact path="/profile/:id" component={UserProfile} />
-    <Route exact path="/homepage" component={Homepage} />
-  </Switch>
-);
+class App extends Component {
+  render() {
+    return (
+      <Switch>
+        <Route exact path="/" render={() => <LoginForm />} />
+        <Route exact path="/profile" render={() => <UserProfile />} />
+      </Switch>
+    );
+  }
+}
 
 export default App;
+
