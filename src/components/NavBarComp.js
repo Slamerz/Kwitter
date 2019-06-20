@@ -28,7 +28,7 @@ class NavBarComp extends Component {
   render() {
     console.log(this.props.dispatch)
     return (
-      <Navbar className="navbar" theme="primary">
+      <Navbar className="navbar">
         <Button tag={Link} to="/homepage"> Home </Button>
         <SearchBar />
         <NavBarBut>Go!</NavBarBut>
