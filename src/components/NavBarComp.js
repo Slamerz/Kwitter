@@ -8,7 +8,6 @@ import SearchBar from "./SearchBar";
 import {Link} from "react-router-dom";
 import { logoutThenGoToLogin as logout } from "../actions";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 
 
 
@@ -26,12 +25,10 @@ class NavBarComp extends Component {
   }
 
   render() {
-    console.log(this.props.dispatch)
     return (
       <Navbar className="navbar" theme="primary">
         <Button tag={Link} to="/homepage"> Home </Button>
         <SearchBar />
-        <NavBarBut>Go!</NavBarBut>
         <Dropdown open={this.state.open} toggle={this.toggle} className="d-table">
         <DropdownToggle> Settings </DropdownToggle>
         <DropdownMenu>
@@ -46,7 +43,7 @@ class NavBarComp extends Component {
 
 const mapDispatchToProps = {
     logout,
-} 
+}
 
 // export default NavBarComp;
 export default connect(null, mapDispatchToProps)(NavBarComp);
