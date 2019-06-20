@@ -1,6 +1,6 @@
 import {
-  FETCH_USERS_BEGIN, 
-  FETCH_USERS_FAILURE, 
+  FETCH_USERS_BEGIN,
+  FETCH_USERS_FAILURE,
   FETCH_USERS_SUCCESS,
   UPDATE_PROFILE_FAILURE,
   UPDATE_PROFILE_SUCCESS,
@@ -37,11 +37,6 @@ export default (state = initialState, action) => {
         error: action.payload.error,
         users: []
       };
-    
-  
-};
-  switch (action.type) {
-
     case UPDATE_PROFILE_BEGIN:
       return {
         ...state,
@@ -61,28 +56,26 @@ export default (state = initialState, action) => {
         error: action.payload.error,
         user: []
       };
-    }
-    switch (action.type) {
-      
-      case UPDATE_PROFILE_PICTURE_BEGIN:
+    case UPDATE_PROFILE_PICTURE_BEGIN:
       return {
         ...state,
         loading: true,
         error: null
       };
-      case UPDATE_PROFILE_PICTURE_SUCCESS:
+    case UPDATE_PROFILE_PICTURE_SUCCESS:
       return {
         ...state,
-        loading: false,
+        loading: false
         // user: action.payload.users
       };
-      case UPDATE_PROFILE_PICTURE_FAILURE:
+    case UPDATE_PROFILE_PICTURE_FAILURE:
       return {
         ...state,
         loading: false,
         error: action.payload.error,
         user: []
       };
-      default:
-        return state;
-}};
+    default:
+      return state;
+  }
+};
