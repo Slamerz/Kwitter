@@ -2,7 +2,6 @@ import {
   FETCH_USERS_FAILURE,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_BEGIN,
-  REGISTER_USER,
   domain
 } from "./constants";
 

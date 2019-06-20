@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormInput, FormGroup, Collapse } from "shards-react";
+import { registerUser } from "../actions/users";
 
 
 class CollapseLoginButton extends Component {
@@ -19,7 +20,7 @@ class CollapseLoginButton extends Component {
         <Button onClick={this.toggle}>Register</Button>
         <Collapse open={this.state.collapse}>
           <div className="p-3 mt-3 border rounded">
-            <Form onSubmit={this.handleOnSubmit}>
+            <Form onSubmit={registerUser}>
               <br />
               <label color="Yellow">New user? Register here.</label>
               <br />
