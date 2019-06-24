@@ -8,8 +8,10 @@ class Feed extends Component {
         const currentTweet = <Tweet key={tweet.id} tweet={tweet} author={author}/>;
         if(!this.props.filterId)
           return currentTweet;
+
         if(tweet.userId === +this.props.filterId)
           return currentTweet;
+          
       });
       return <div style={{width: "100%"}}>{this.tweets}</div>;
   }
